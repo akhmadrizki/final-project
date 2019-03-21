@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+	<!-- nav -->
+        <div class="header" style="box-shadow: 0 0 10px rgba(100,100,100,0.4);">
+            <div class="container">
+           		<div class="row">
+               		<div class="col-6">
+                   		<div class="logo">
+                       		<a href="../index.html"><img src="../assets/images/site-logo-green.png" alt="my-logo"></a>
+                   		</div>
+               		</div>
+               		<div class="col-6">
+                   		<div class="menu">
+                       		<ul>
+                           		<li><a href="../index.html" style="color: green;">beranda</a></li>
+                           		<li><a href="404.html" style="color: green;">project</a></li>
+                           		<li><a href="404.html" style="color: green;">tentang kami</a></li>
+                           		<li><a href="404.html" style="color: green;">kontak</a></li>
+                           		<a href="#"><button type="button" class="btn btn-primary btn-lg colors" style="display: inline;">donasi</button></a>
+                       		</ul>
+                   		</div>
+               		</div>
+               		</div>
+           		</div>
+        </div>
+        <!-- end-nav -->
+	<div id="content">
+        <div id="main-title"><h1>Bantu Pembuatan PLTSa</h1></div>
+        
+        <div id="column-donate">
+           
+            <div id="donasi-active">
+                <p>1. DONASI</p>
+            </div>
+            
+            <div id="pembayaran">
+                <p>2. PEMBAYARAN</p>
+            </div>
+            
+        </div>
+        <!--end-column-donate-->
+        
+        <div id="main">
+           
+            <h2>Masukan Nominal Donasi</h2>
+            <p>Donasi minimal Rp20.000 serta kelipatan ribuan (misal: 50.000, 82.000, 105.000, dst.)</p>
+            
+            <div class="col-sm-6 my-1" style="margin: 0 auto;">
+		      <input type="text" class="form-control" id="title">
+		    </div>
+            
+            <div id="check">
+                <input type="checkbox" id="cek">
+                <p>Donasi sebagai anonim</p>
+            </div>
+            
+            <h2>Tinggalkan Komentar (opsional)</h2>
+            
+            <div id="coment-text">
+               <div id="row">
+                   
+                    <p style="float:left;">Tuliskan komentar untuk mendukung program ini</p>
+                    <p style="float:right;">0/150</p>
+                    
+                    <textarea name="tulisan" id="komen"></textarea>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id="kiriman-donasi">
+            <div id="nominal-anda">
+            <div class="col-sm-12 my-1">
+		      <input type="text" class="form-control" id="slug" readonly>
+		    </div>
+            </div>
+            <div id="btn"><h2>Lanjut</h2></div>
+        </div>
+        
+    </div>
+
+	<script src="../assets/js/jquery-1.12.2.min.js"></script>
+	<script>
+
+		var title = document.getElementById("title");
+		var slug = document.getElementById("slug");
+
+		function slugify(text) {
+			return text.toString().toLowerCase()
+				.replace(/\s+/g, '-')           // Replace spaces with -
+				.replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+				.replace(/\-\-+/g, '-')         // Replace multiple - with single -
+				.replace(/^-+/, '')             // Trim - from start of text
+				.replace(/-+$/, '');            // Trim - from end of text
+		}
+
+		title.addEventListener('keyup', function () {
+			slug.value = slugify(title.value);
+		});
+
+	</script>
+
+</body>
+</html>
